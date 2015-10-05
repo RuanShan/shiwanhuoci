@@ -1,0 +1,20 @@
+:javascript
+  $(document).ready(function(){
+    $('#gostep1').click(function(){ $(this).parents('.step').addClass('hide').next().removeClass('hide') })
+    $('#gostep2').click(function(){ $(this).parents('.step').addClass('hide').next().removeClass('hide') })
+  })
+%div.page-header
+  %h1= @page_name
+%div#step1.step
+  %button.btn.btn-primary#gostep1 开始销售
+
+%div#step2.step.hide
+  %div
+    %div.well
+      =render 'policy'
+  %button.btn.btn-primary#gostep2 我同意,点击注册
+  %br
+  %br
+%div#step3.step.hide
+  %div
+    =render 'form'
