@@ -2,12 +2,13 @@
 <html>
 <head>
   <title>DummyApp</title>
-  <%= stylesheet_link_tag 'rails_admin/rails_admin' %>
-  <%= csrf_meta_tag %>
+  <%= render 'shared/head' %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="">
+    <%= render 'shared/header' %>
+    <%= yield %>
+    <%= render 'shared/footer' %>
+  </div>
 </body>
 </html>

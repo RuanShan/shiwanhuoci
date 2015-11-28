@@ -1,0 +1,35 @@
+.login{
+  padding: 8px 0;
+  color: white;
+  background-color: #3D4053;
+}
+.header{
+  padding: 8px 0;
+}
+
+.slogan{
+  padding: 8px 0;
+  background-color: #59BCE6;
+}
+
+.subject{
+  background-color: #f7f7f7;
+  text-align: center;
+  margin: 8px 0;
+  padding: 18px 12px;
+}
+.subject .name{
+  padding: 8px;
+  font-size: 140%;
+}
+.subject .word_count{
+  padding: 8px;
+  font-size: 140%;
+}
+
+.footer{
+  padding: 8px 0;
+  text-align: center;
+  color: white;
+  background-color: #3D4053;
+}

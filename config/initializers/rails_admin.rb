@@ -2,17 +2,20 @@
 #RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::NewSale)
 
 RailsAdmin.config do |config|
-  config.main_app_name = ["XEnglish", "Admin"]
-  #config.excluded_models = ['RelTest','Player']
-  config.included_models = ["League", "Team", "Player","User" ]
+  config.main_app_name = ["ShiWanHuoCi", "Admin"]
+  config.included_models = ['Subject','User', 'Role']
 
-  config.authenticate_with {}
-  config.current_user_method {
-    current_user#User.first
-  }
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+  config.current_user_method(&:current_user)
+
+  config.authorize_with do
+    redirect_to main_app.root_path unless current_user.is_admin?
+  end
+
   config.authorize_with :cancan
   config.audit_with :history, User
-
 
 
 end

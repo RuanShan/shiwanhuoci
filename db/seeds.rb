@@ -1,20 +1,23 @@
 #require 'mlb'
 role_model =  RailsAdmin::AbstractModel.new(Role)
 user_model     = RailsAdmin::AbstractModel.new(User)
-league_model   = RailsAdmin::AbstractModel.new(League)
-division_model = RailsAdmin::AbstractModel.new(Division)
-team_model     = RailsAdmin::AbstractModel.new(Team)
-player_model   = RailsAdmin::AbstractModel.new(Player)
 
 
 admin_role = role_model.new( name: 'admin')
 admin_role.save
 user_model.new(:name=>'admin', :account => 'admin', :email => 'admin@example.com', :password => 'password', :roles=>[ admin_role ]).save
 
-wholesaler_role = role_model.new( name: 'wholesaler')
-wholesaler_role.save
-
-
+subject_model = RailsAdmin::AbstractModel.new(Subject)
+subject_params = [
+  ['四级单词', 3627],['六级单词', 6231],['考研单词', 6287],
+  ['雅思单词', 6558],['托福单词', 4686],['GMAT单词', 3004],
+  ['SAT单词', 2950],['高考单词', 3120],['高中单词', 3120],
+  ['中考单词', 2364],['初中单词', 2364],['新概念一册', 779],
+  ['新概念二册', 753],['新概念三册', 855],['新概念四册', 586] ]
+subject_params.each{|attrs|
+  subject = subject_model.new( name: attrs[0], word_count: attrs[1])
+  subject.save
+}
 #MLB::Team.all.each do |mlb_team|
 #  unless league = league_model.where(:name => mlb_team.league).first
 #    league = league_model.new(:name => mlb_team.league)
@@ -33,4 +36,4 @@ wholesaler_role.save
 #  end
 #end
 
-puts "Seeded #{league_model.count} leagues, #{division_model.count} divisions, #{team_model.count} teams and #{player_model.count} players"
+puts "Seeded #{user_model.count} Users, #{subject_model.count} subjects"

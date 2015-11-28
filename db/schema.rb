@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924092549) do
+ActiveRecord::Schema.define(version: 20151124092549) do
 
   create_table "balls", force: true do |t|
     t.string   "color"
@@ -142,6 +142,11 @@ ActiveRecord::Schema.define(version: 20150924092549) do
 
   add_index "roles_users", ["role_id"], name: "index_roles_users_on_role_id"
   add_index "roles_users", ["user_id"], name: "index_roles_users_on_user_id"
+
+  create_table "subjects", force: true do |t|
+    t.string  "name"
+    t.integer "word_count"
+  end
 
   create_table "teams", force: true do |t|
     t.datetime "created_at"

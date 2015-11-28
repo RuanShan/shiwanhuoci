@@ -36,11 +36,8 @@ zh-CN:
         one: "部门"
         other: "部门"
       user:
-        one: "会员"
-        other: "会员"
-      credit:
-        one: "充值记录"
-        other: "充值记录"
+        one: User
+        other: User
   admin:
     actions:
       bulk_delete:

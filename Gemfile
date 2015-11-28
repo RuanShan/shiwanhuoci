@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org/'
+source 'https://ruby.taobao.org/'
 
 ruby '2.0.0'
 gem 'rails', '~> 4.1.11'
@@ -38,14 +38,8 @@ end
 
 gem 'cancan'
 gem 'devise'
-gem 'rails_admin',   :path => './rails_admin'
-
-#gem 'mlb', '~> 0.5'
-gem 'paperclip', '~> 2.4'
-gem 'mini_magick'
-gem 'carrierwave'
-gem 'dragonfly'
-
+gem 'rails_admin'
+gem 'paperclip'
 
 group :assets do
 	# Use SCSS for stylesheets
