@@ -1,13 +1,23 @@
 .login{
-  padding: 8px 0;
-  color: white;
+  padding: 6px 0;
   background-color: #3D4053;
 }
-.header{
-  padding: 8px 0;
+.login a {
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
 }
 
-.slogan{
+.header {
+  background-color: #EFEFEF;
+  padding: 8px 0;
+}
+.header a {
+  color: #3D4053;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+.slogan {
   padding: 8px 0;
   background-color: #59BCE6;
 }
@@ -15,8 +25,8 @@
 .subject{
   background-color: #f7f7f7;
   text-align: center;
-  margin: 8px 0;
-  padding: 18px 12px;
+  margin: 12px 0;
+  padding: 24px;
 }
 .subject .name{
   padding: 8px;
