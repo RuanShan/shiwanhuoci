@@ -8,6 +8,8 @@ admin_role.save
 user_model.new(:name=>'admin', :account => 'admin', :email => 'admin@example.com', :password => 'password', :roles=>[ admin_role ]).save
 
 subject_model = RailsAdmin::AbstractModel.new(Subject)
+lesson_model = RailsAdmin::AbstractModel.new(Lesson)
+
 subject_params = [
   ['四级单词', 3627],['六级单词', 6231],['考研单词', 6287],
   ['雅思单词', 6558],['托福单词', 4686],['GMAT单词', 3004],
@@ -18,6 +20,13 @@ subject_params.each{|attrs|
   subject = subject_model.new( name: attrs[0], word_count: attrs[1])
   subject.save
 }
+
+Lesson_params = [ [30], [30], [30], [30]]
+Lesson_params.each{|attrs|
+  lesson = lesson_model.new( word_count: attrs[0])
+  lesson.save
+}
+
 #MLB::Team.all.each do |mlb_team|
 #  unless league = league_model.where(:name => mlb_team.league).first
 #    league = league_model.new(:name => mlb_team.league)
@@ -36,4 +45,4 @@ subject_params.each{|attrs|
 #  end
 #end
 
-puts "Seeded #{user_model.count} Users, #{subject_model.count} subjects"
+puts "Seeded #{user_model.count} Users, #{subject_model.count} subjects,  #{lesson_model.count} lessons"

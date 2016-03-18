@@ -1,7 +1,7 @@
 source 'https://ruby.taobao.org/'
 
-ruby '2.0.0'
-gem 'rails', '~> 4.1.11'
+ruby '2.1.5'
+gem 'rails', '~> 4.2.5'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -17,6 +17,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'acts_as_list'
 gem 'acts_as_tree'
 #gem 'awesome_nested_set'
 
@@ -36,18 +37,18 @@ group :development, :test do
 end
 
 
-gem 'cancan'
-gem 'devise'
+gem 'cancancan'
+
+gem 'devise', '~> 3.5.2'
+
 gem 'rails_admin'
 gem 'paperclip'
 
-group :assets do
-	# Use SCSS for stylesheets
-	gem 'sass-rails', '~> 5.0'
-	# Use Uglifier as compressor for JavaScript assets
-	gem 'uglifier', '>= 1.3.0'
-	# Use CoffeeScript for .coffee assets and views
-	gem 'coffee-rails', '~> 4.1.0'
-	# See https://github.com/rails/execjs#readme for more supported runtimes
-	gem 'therubyracer', platforms: :ruby
-end
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.1.0'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+gem 'therubyracer', platforms: :ruby

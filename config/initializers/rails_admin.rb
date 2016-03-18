@@ -3,7 +3,7 @@
 
 RailsAdmin.config do |config|
   config.main_app_name = ["ShiWanHuoCi", "Admin"]
-  config.included_models = ['Subject','User', 'Role']
+  config.included_models = ['Subject', 'Lesson','User', 'Role']
 
   config.authenticate_with do
     warden.authenticate! scope: :user
