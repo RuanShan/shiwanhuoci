@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317092549) do
+ActiveRecord::Schema.define(version: 20160323075052) do
 
   create_table "balls", force: :cascade do |t|
     t.string   "color",      limit: 255
@@ -105,9 +105,19 @@ ActiveRecord::Schema.define(version: 20160317092549) do
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string  "name"
-    t.integer "position"
-    t.integer "word_count"
+    t.integer  "subject_id"
+    t.string   "name"
+    t.integer  "position"
+    t.integer  "word_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons_words", force: :cascade do |t|
+    t.integer  "lesson_id"
+    t.integer  "word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "nested_field_tests", force: :cascade do |t|
@@ -225,5 +235,11 @@ ActiveRecord::Schema.define(version: 20160317092549) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "words", force: :cascade do |t|
+    t.string   "spelling"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

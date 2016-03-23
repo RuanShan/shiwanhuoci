@@ -16,6 +16,8 @@ subject_params = [
   ['SAT单词', 2950],['高考单词', 3120],['高中单词', 3120],
   ['中考单词', 2364],['初中单词', 2364],['新概念一册', 779],
   ['新概念二册', 753],['新概念三册', 855],['新概念四册', 586] ]
+
+
 subject_params.each{|attrs|
   subject = subject_model.new( name: attrs[0], word_count: attrs[1])
   subject.save
@@ -24,6 +26,7 @@ subject_params.each{|attrs|
 Lesson_params = [ [30], [30], [30], [30]]
 Lesson_params.each{|attrs|
   lesson = lesson_model.new( word_count: attrs[0])
+  lesson.subject = Subject.first
   lesson.save
 }
 

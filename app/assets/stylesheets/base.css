@@ -18,10 +18,9 @@
   text-decoration: none;
 }
 .slogan {
-  padding: 8px 0;
   background-color: #59BCE6;
 }
-
+.slogan img{ width: 100%; }
 .subject{
   background-color: #f7f7f7;
   text-align: center;
