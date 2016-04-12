@@ -10,5 +10,12 @@
   <%= @lesson.word_count %>
 </p>
 
+<p>
+  <% @lesson.classifications(includes: :word) .each{ |classification| %>
+    <%= classification.word.spelling %>
+
+    <%= link_to 'play', "javascript:void(0)", class: "operate-btn op-sound", id: classification.word.pronunciation_uk.url, data: { url: classification.word.pronunciation_uk.url }, onclick: onMouseOver="asplay_top(this.id);" %>
+  <% } %>
+</p>
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 <%= link_to 'Back', lessons_path %>

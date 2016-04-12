@@ -3,7 +3,7 @@
 
 RailsAdmin.config do |config|
   config.main_app_name = ["ShiWanHuoCi", "Admin"]
-  config.included_models = ['Subject', 'Lesson','User', 'Role']
+  config.included_models = ['Subject', 'Lesson','User', 'Role', 'Word', 'Classification']
 
   config.authenticate_with do
     warden.authenticate! scope: :user
@@ -17,5 +17,8 @@ RailsAdmin.config do |config|
   config.authorize_with :cancan
   config.audit_with :history, User
 
-
+  config.model 'Word' do
+    field :spelling
+    field :pronunciation_uk, :paperclip
+  end
 end

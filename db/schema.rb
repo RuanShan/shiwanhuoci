@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323075052) do
+ActiveRecord::Schema.define(version: 20160412075052) do
 
   create_table "balls", force: :cascade do |t|
     t.string   "color",      limit: 255
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 20160323075052) do
   create_table "lessons_words", force: :cascade do |t|
     t.integer  "lesson_id"
     t.integer  "word_id"
+    t.integer  "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -238,8 +239,16 @@ ActiveRecord::Schema.define(version: 20160323075052) do
 
   create_table "words", force: :cascade do |t|
     t.string   "spelling"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "pronunciation_uk_file_name"
+    t.string   "pronunciation_uk_content_type"
+    t.integer  "pronunciation_uk_file_size"
+    t.datetime "pronunciation_uk_updated_at"
+    t.string   "pronunciation_en_file_name"
+    t.string   "pronunciation_en_content_type"
+    t.integer  "pronunciation_en_file_size"
+    t.datetime "pronunciation_en_updated_at"
   end
 
 end

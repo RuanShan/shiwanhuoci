@@ -3,6 +3,7 @@ class CreateClassifications < ActiveRecord::Migration
     create_table :lessons_words do |t|
       t.references :lesson
       t.references :word
+      t.integer :position
       t.timestamps null: false
     end
   end
