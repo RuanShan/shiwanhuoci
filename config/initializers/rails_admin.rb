@@ -19,6 +19,16 @@ RailsAdmin.config do |config|
 
   config.model 'Word' do
     field :spelling
+    field :card, :paperclip
     field :pronunciation_uk, :paperclip
+    field :card do
+      # set a method available to your asset (defaults to :thumb, :thumbnail or '100x100>' for Dragonfly)
+      thumb_method :thumb
+      # for delete checkbox in forms
+      delete_method :delete_card     # don't forget to whitelist if you use :attr_accessible
+      # in case of a validation failure, to retain asset in the form (not available for Paperclip)
+      #cache_method :cache_card       # don't forget to whitelist if you use :attr_accessible
+    end
+
   end
 end

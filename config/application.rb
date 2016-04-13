@@ -1,13 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-require 'devise'
-require 'paperclip'
 
-# If you have a Gemfile, require the default gems, the ones in the
-# current environment and also include :assets gems if in development
-# or test environments.
-Bundler.require *Rails.groups(:assets) if defined?(Bundler)
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+Bundler.require(*Rails.groups)
 
 module DummyApp
   class Application < Rails::Application
@@ -20,7 +17,7 @@ module DummyApp
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
-    # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
+    config.plugins = [ :exception_notification,  :all ]
 
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
@@ -40,7 +37,11 @@ module DummyApp
     config.filter_parameters += [:password]
 
     # Enable the asset pipeline
-    #config.assets.enabled = true
-    #config.assets.initialize_on_precompile = false
+    config.assets.enabled = true
+    #config.assets.js_compressor = :uglifier
+    config.assets.version = 'v1'
+#config.assets.initialize_on_precompile = false
+
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end

@@ -413,13 +413,13 @@ function iciba_common_top_clickCountIndex(liid) {
 
 if (document.all){
 
-	window.attachEvent("onresize",iciba_common_top_box);
+	//window.attachEvent("onresize",iciba_common_top_box);
 
 }
 
 else{
 
-	window.addEventListener("resize",iciba_common_top_box);
+	//window.addEventListener("resize",iciba_common_top_box);
 
 }
 

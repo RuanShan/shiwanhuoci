@@ -5,10 +5,19 @@
     <div class="span-8 <%= ((i>1 )&&( (i+1) % 3==0 )) ? 'last' : '' %>">
       <div class="subject">
         <div class="name">
-          <%= link_to "第 #{lesson.position} 关", lesson_url( lesson ) %>
+
+          <%= link_to_if lesson.classifications.count > 0, "第 #{lesson.position} 关", start_subject_lesson_path( lesson.subject, lesson ), data:{ lightbox: "image" } %>
+
+          <%= render partial: 'words', locals: { lesson: lesson } %>
+
         </div>
         <div class="word_count"> <%= lesson.word_count %>个单词 </div>
       </div>
     </div>
 <% } %>
 </div>
+
+<%= javascript_tag do %>
+$.facebox.settings.closeImage = <%== image_path( 'facebox/closelabel.png').to_json %>
+$.facebox.settings.loadingImage = <%== image_path( 'facebox/loading.gif').to_json %>
+<% end %>

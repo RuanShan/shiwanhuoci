@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  before_action :set_lesson, only: [:show, :edit, :update, :destroy, :start]
 
   # GET /lessons
   # GET /lessons.json
@@ -16,6 +16,11 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
+  end
+
+
+  def start
+    render partial: 'lesson_words'
   end
 
   # GET /lessons/1/edit

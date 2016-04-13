@@ -1,0 +1,9 @@
+<%= div_for(lesson, class: "lesson") do %>
+  <% lesson.classifications.each{ |lesson_word| word = lesson_word.word  %>
+    <%= div_for(word, class: "word") do %>
+
+
+    <a href="images/image-1.jpg" >Image #2</a>
+    <% end %>
+  <% } %>
+<% end %>

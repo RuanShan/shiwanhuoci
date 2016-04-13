@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412075052) do
+ActiveRecord::Schema.define(version: 20160413075052) do
 
   create_table "balls", force: :cascade do |t|
     t.string   "color",      limit: 255
@@ -249,6 +249,10 @@ ActiveRecord::Schema.define(version: 20160412075052) do
     t.string   "pronunciation_en_content_type"
     t.integer  "pronunciation_en_file_size"
     t.datetime "pronunciation_en_updated_at"
+    t.string   "card_file_name"
+    t.string   "card_content_type"
+    t.integer  "card_file_size"
+    t.datetime "card_updated_at"
   end
 
 end
