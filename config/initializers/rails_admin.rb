@@ -46,6 +46,11 @@ RailsAdmin.config do |config|
       #cache_method :cache_card       # don't forget to whitelist if you use :attr_accessible
     end
     field :description
-
   end
+
+  config.model 'Subject' do
+    field :name
+    field :word_count
+  end
+
 end
