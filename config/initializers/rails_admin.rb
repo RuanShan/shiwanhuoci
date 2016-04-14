@@ -30,7 +30,8 @@ RailsAdmin.config do |config|
   end
 
   config.authorize_with :cancan
-  config.audit_with :history, User
+  #Disable audit, it cause Mysql2::Error: Data too long for column 'message' at row 1: INSERT INTO `rails_admin_histories`
+  #config.audit_with :history, User
 
   config.model 'Word' do
     field :spelling
