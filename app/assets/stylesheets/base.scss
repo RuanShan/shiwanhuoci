@@ -94,10 +94,13 @@
   text-decoration: none;
   color:transparent;
   vertical-align: middle;
-
 }
+.word span.pronunciation a.op-sound-man{
+  background:transparent asset-url( 'speaker-blue.png')  no-repeat left center ;
+}
+
 .word span.pronunciation a:hover{
-  background: transparent asset-url( 'speaker-blue.png') no-repeat left center ;
+  /* background: transparent asset-url( 'speaker-blue.png') no-repeat left center ;*/
 }
 
 .word  .op-card{

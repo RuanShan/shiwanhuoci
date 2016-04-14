@@ -9,11 +9,13 @@
          <span class="meanings"> <%= word.meanings %> </span>
        </p>
        <p class="center s2">
-         [英] <span class="pronunciation pronunciation_uk"> 
+         [英] <span class="pronunciation pronunciation_uk">
            <%= link_to_if word.pronunciation_uk.present?, "play", "javascript:void(0)", class: "operate-btn op-sound", id: word.pronunciation_uk.url, data: { url: word.pronunciation_uk.url }, onclick: onMouseOver="asplay_top(this.id);" %>
+           <%= link_to_if word.pronunciation_uk_man.present?, "play", "javascript:void(0)", class: "operate-btn op-sound op-sound-man", id: word.pronunciation_uk_man.url, data: { url: word.pronunciation_uk_man.url }, onclick: onMouseOver="asplay_top(this.id);" %>
          </span>
          [美] <span class="pronunciation pronunciation_en">
-           <%= link_to_if word.pronunciation_en.present?, "play", "javascript:void(0)", class: "operate-btn op-sound", id: word.pronunciation_uk.url, data: { url: word.pronunciation_en.url }, onclick: onMouseOver="asplay_top(this.id);" %>
+           <%= link_to_if word.pronunciation_en.present?, "play", "javascript:void(0)", class: "operate-btn op-sound", id: word.pronunciation_en.url, data: { url: word.pronunciation_en.url }, onclick: onMouseOver="asplay_top(this.id);" %>
+           <%= link_to_if word.pronunciation_en_man.present?, "play", "javascript:void(0)", class: "operate-btn op-sound op-sound-man", id: word.pronunciation_en_man.url, data: { url: word.pronunciation_en_man.url }, onclick: onMouseOver="asplay_top(this.id);" %>
          </span>
        </p>
        <p class="center s3"> <%= word.description %></p>

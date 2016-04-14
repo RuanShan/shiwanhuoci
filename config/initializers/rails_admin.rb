@@ -37,6 +37,10 @@ RailsAdmin.config do |config|
     field :meanings
     field :card, :paperclip
     field :pronunciation_uk, :paperclip
+    field :pronunciation_uk_man, :paperclip
+    field :pronunciation_en, :paperclip
+    field :pronunciation_en_man, :paperclip
+
     field :card do
       # set a method available to your asset (defaults to :thumb, :thumbnail or '100x100>' for Dragonfly)
       thumb_method :thumb
