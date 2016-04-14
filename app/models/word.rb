@@ -28,9 +28,9 @@ class Word < ActiveRecord::Base
   validates_attachment :pronunciation_en_man,
     content_type: { content_type: ["audio/mpeg","audio/mp3"] },
     size: { in: 0..10.megabytes }
-
+  # ie "image/pjpeg", "image/x-png"
   validates_attachment :card,
-    content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
+    content_type: { content_type: ["image/pjpeg", "image/x-png", "image/jpeg", "image/gif", "image/png"] },
     size: { in: 0..1.megabytes }
   #validates :pronunciation_en, attachment_presence: false
 
