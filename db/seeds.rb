@@ -6,7 +6,7 @@ user_model     = RailsAdmin::AbstractModel.new(User)
 admin_role = role_model.new( name: 'admin')
 admin_role.save
 # keep email empty, or rails_admin get gravtar by email.
-user_model.new(:name=>'admin', :account => 'admin', :email => '', :password => 'password', :roles=>[ admin_role ]).save
+user_model.new(:name=>'admin', :account => 'admin', :email => 'admin@example.com', :password => 'password', :roles=>[ admin_role ]).save
 
 subject_model = RailsAdmin::AbstractModel.new(Subject)
 lesson_model = RailsAdmin::AbstractModel.new(Lesson)
