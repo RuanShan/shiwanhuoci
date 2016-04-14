@@ -1,9 +1,29 @@
 <%= div_for(@lesson, class: "lesson") do %>
-  <% @lesson.classifications.each{ |lesson_word| word = lesson_word.word  %>
-    <%= div_for(word, class: "word") do %>
-     <h4> <%= word.spelling %> </h4>
-     <%= image_tag word.card %>
-      <a href="images/image-1.jpg" >Image #2</a>
-    <% end %>
-  <% } %>
+  <div class="lft"> <%= link_to "<", "#", class: 'operate-btn lb-nav lb-prev op-prev' %> </div>
+  <div class="rgt"><%= link_to ">", "#", class: 'operate-btn lb-nav lb-next op-next'  %> </div>
+  <div class="words">
+    <% @lesson.classifications.each{ |lesson_word| word = lesson_word.word  %>
+      <%= div_for(word, class: "word #{ lesson_word.first? ? 'active' : 'inactive'}") do %>
+       <p class="s0"> <span class="position"><%= lesson_word.position %></span> </p>
+       <p class="center s1"><span class="spelling"> <%= word.spelling %> </span>
+         <span class="meanings"> <%= word.meanings %> </span>
+       </p>
+       <p class="center s2">
+         [英] <span class="pronunciation pronunciation_uk"> 
+           <%= link_to_if word.pronunciation_uk.present?, "play", "javascript:void(0)", class: "operate-btn op-sound", id: word.pronunciation_uk.url, data: { url: word.pronunciation_uk.url }, onclick: onMouseOver="asplay_top(this.id);" %>
+         </span>
+         [美] <span class="pronunciation pronunciation_en">
+           <%= link_to_if word.pronunciation_en.present?, "play", "javascript:void(0)", class: "operate-btn op-sound", id: word.pronunciation_uk.url, data: { url: word.pronunciation_en.url }, onclick: onMouseOver="asplay_top(this.id);" %>
+         </span>
+       </p>
+       <p class="center s3"> <%= word.description %></p>
+
+       <div class="center s4">
+           <%= link_to_if word.card.present?, "记忆技巧", "javascript:void(0)", class: "operate-btn op-card" %>
+           <p class="card">  <%= image_tag word.card %>   </p>
+       </div>
+
+      <% end %>
+    <% } %>
+  </div>
 <% end %>

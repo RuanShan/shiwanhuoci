@@ -18,11 +18,13 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new
   end
 
-
   def start
     render partial: 'lesson_words'
   end
 
+  #def start
+  #
+  #end
   # GET /lessons/1/edit
   def edit
   end

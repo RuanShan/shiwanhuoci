@@ -68,6 +68,7 @@
   left: 0px;
   height:100%;
   width:100%;
+  background-color: #ffffff;
 }
 
 .facebox_hide {
@@ -77,4 +78,26 @@
 .facebox_overlayBG {
   background-color: #000;
   z-index: 99;
+}
+
+/******************** extra added by david *********************/
+#facebox  .lb-prev, .lb-next {
+  cursor: pointer;
+  display: block;
+}
+#facebox .lb-nav {
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  left: 0;
+  width: 100px;
+  z-index: 10;
+  color: white;
+}
+
+#facebox  .lb-prev{
+  background: asset-url("nav-prev.png") right 48% no-repeat;
+}
+#facebox  .lb-next{
+  background: asset-url("nav-next.png") left 48% no-repeat;
 }
