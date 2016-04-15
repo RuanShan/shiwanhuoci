@@ -36,6 +36,8 @@ RailsAdmin.config do |config|
   config.model 'Word' do
     field :spelling
     field :meanings
+    field :phonetic_uk
+    field :phonetic_en
     field :card, :paperclip
     field :pronunciation_uk, :paperclip
     field :pronunciation_uk_man, :paperclip

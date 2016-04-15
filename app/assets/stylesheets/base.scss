@@ -82,8 +82,10 @@
 .word span.meanings{
 
 }
+.word span.phonetic{
+  color:gray;
+}
 .word span.pronunciation{
-  padding: 12px 0;
   color:transparent;
 }
 .word span.pronunciation_uk{

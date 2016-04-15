@@ -9,12 +9,14 @@
          <span class="meanings"> <%= word.meanings %> </span>
        </p>
        <p class="center s2">
-         [英] <span class="pronunciation pronunciation_uk">
-           <%= link_to_if word.pronunciation_uk.present?, "play", "javascript:void(0)", class: "operate-btn op-sound", id: word.pronunciation_uk.url, data: { url: word.pronunciation_uk.url }, onclick: onMouseOver="asplay_top(this.id);" %>
+         <span>英</span> <span class="pronunciation pronunciation_uk">
+           <span class="phonetic phonetic_uk"> [<%= word.phonetic_uk %>]  </span>
+           <%= link_to_if word.pronunciation_uk.present?, " ", "javascript:void(0)", class: "operate-btn op-sound", id: word.pronunciation_uk.url, data: { url: word.pronunciation_uk.url }, onclick: onMouseOver="asplay_top(this.id);" %>
            <%= link_to_if word.pronunciation_uk_man.present?, "play", "javascript:void(0)", class: "operate-btn op-sound op-sound-man", id: word.pronunciation_uk_man.url, data: { url: word.pronunciation_uk_man.url }, onclick: onMouseOver="asplay_top(this.id);" %>
          </span>
-         [美] <span class="pronunciation pronunciation_en">
-           <%= link_to_if word.pronunciation_en.present?, "play", "javascript:void(0)", class: "operate-btn op-sound", id: word.pronunciation_en.url, data: { url: word.pronunciation_en.url }, onclick: onMouseOver="asplay_top(this.id);" %>
+         <span>美</span> <span class="pronunciation pronunciation_en">
+           <span class="phonetic phonetic_en"> [<%= word.phonetic_en %>]  </span>
+           <%= link_to_if word.pronunciation_en.present?, " ", "javascript:void(0)", class: "operate-btn op-sound", id: word.pronunciation_en.url, data: { url: word.pronunciation_en.url }, onclick: onMouseOver="asplay_top(this.id);" %>
            <%= link_to_if word.pronunciation_en_man.present?, "play", "javascript:void(0)", class: "operate-btn op-sound op-sound-man", id: word.pronunciation_en_man.url, data: { url: word.pronunciation_en_man.url }, onclick: onMouseOver="asplay_top(this.id);" %>
          </span>
        </p>

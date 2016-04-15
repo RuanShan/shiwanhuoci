@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414075059) do
+ActiveRecord::Schema.define(version: 20160415075051) do
 
   create_table "balls", force: :cascade do |t|
     t.string   "color",      limit: 255
@@ -263,6 +263,8 @@ ActiveRecord::Schema.define(version: 20160414075059) do
     t.string   "pronunciation_en_man_content_type"
     t.integer  "pronunciation_en_man_file_size"
     t.datetime "pronunciation_en_man_updated_at"
+    t.string   "phonetic_uk"
+    t.string   "phonetic_en"
   end
 
 end
