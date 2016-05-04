@@ -7,11 +7,10 @@ DummyApp::Application.routes.draw do
   root :to => "home#index"
 
   resources :subjects do
-    resources :lessons do
-    
-      get 'start', on: :member
-
-    end
+  end
+  resources :lessons do
+    get 'get_more', on: :collection
+    get 'start', on: :member
   end
 
 end

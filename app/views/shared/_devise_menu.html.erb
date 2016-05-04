@@ -1,0 +1,22 @@
+<ul class="devise_menu clearfix">
+
+  <% if user_signed_in? %>
+    <li >
+    <%= link_to(t('devise.actions.sign_out'), destroy_user_session_path, :method => :delete) %>
+    </li>
+  <% else %>
+    <li>
+    <%= link_to(t('devise.actions.sign_in'), new_user_session_path)  %>
+    </li>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <li>
+    <%= link_to(t('devise.actions.edit'), edit_user_registration_path) %>
+    </li>
+  <% else %>
+    <li>
+    <%= link_to(t('devise.actions.sign_up'), new_user_registration_path)  %>
+    </li>
+  <% end %>
+</ul>

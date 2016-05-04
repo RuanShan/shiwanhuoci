@@ -1,9 +1,8 @@
 class DeviseCreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
-      t.string :type
       t.integer :team_id
-      t.string :name, :limit => 100, :null => false
+      t.string :name, :limit => 100
       t.string :position, :limit => 50
       t.integer :number, :null => false , :default => 0
       t.boolean :retired, :default => false
@@ -15,19 +14,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       #private information
       t.string :account, :limit => 36
-      t.string :parent_account, :limit => 36
+      t.string :nickname, :limit => 36
       t.string :cellphone, :limit => 16
-      t.string :card_num, :limit => 36  # id card number
-      t.string :bank_name, :limit => 36  # bank card number
-      t.string :bank_num, :limit => 36  # bank card number
-      t.string :sms_num, :limit => 16   # cellphone for sms
-      t.string :address, :limit => 100  # cellphone for sms
-      t.string :company_address, :limit => 100  # cellphone for sms
-
-      #nested set
-      t.integer :parent_id, :null => true, :index => true
-      #t.integer :lft, :null => false, :index => true
-      #t.integer :rgt, :null => false, :index => true
 
       #:database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
       ## Database authenticatable

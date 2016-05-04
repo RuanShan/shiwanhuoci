@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(version: 20160415075051) do
 
   create_table "balls", force: :cascade do |t|
-    t.string   "color",      limit: 255
+    t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "cms_basic_pages", force: :cascade do |t|
-    t.string   "title",      limit: 255
+    t.string   "title"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -28,20 +28,8 @@ ActiveRecord::Schema.define(version: 20160415075051) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
-    t.string   "commentable_type", limit: 255
+    t.string   "commentable_type"
     t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "credits", force: :cascade do |t|
-    t.integer  "creator_id",                            default: 0
-    t.integer  "user_id",                                           null: false
-    t.decimal  "amount",                  precision: 2, default: 0, null: false
-    t.integer  "deal_type",                             default: 1
-    t.string   "deal_action", limit: 24
-    t.integer  "status",                                default: 0
-    t.string   "notes",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,7 +66,7 @@ ActiveRecord::Schema.define(version: 20160415075051) do
   end
 
   create_table "field_tests", force: :cascade do |t|
-    t.string   "string_field",              limit: 255
+    t.string   "string_field"
     t.text     "text_field"
     t.integer  "integer_field"
     t.float    "float_field"
@@ -90,12 +78,12 @@ ActiveRecord::Schema.define(version: 20160415075051) do
     t.boolean  "boolean_field"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "format",                    limit: 255
-    t.string   "restricted_field",          limit: 255
-    t.string   "protected_field",           limit: 255
-    t.string   "paperclip_asset_file_name", limit: 255
-    t.string   "dragonfly_asset_uid",       limit: 255
-    t.string   "carrierwave_asset",         limit: 255
+    t.string   "format"
+    t.string   "restricted_field"
+    t.string   "protected_field"
+    t.string   "paperclip_asset_file_name"
+    t.string   "dragonfly_asset_uid"
+    t.string   "carrierwave_asset"
   end
 
   create_table "leagues", force: :cascade do |t|
@@ -122,17 +110,17 @@ ActiveRecord::Schema.define(version: 20160415075051) do
   end
 
   create_table "nested_field_tests", force: :cascade do |t|
-    t.string   "title",         limit: 255
+    t.string   "title"
     t.integer  "field_test_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "rails_admin_histories", force: :cascade do |t|
-    t.string   "message",    limit: 255
-    t.string   "username",   limit: 255
+    t.string   "message"
+    t.string   "username"
     t.integer  "item"
-    t.string   "table",      limit: 255
+    t.string   "table"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -148,8 +136,7 @@ ActiveRecord::Schema.define(version: 20160415075051) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.string "name",     limit: 255
-    t.string "category", limit: 255
+    t.string "name"
   end
 
   create_table "roles_users", id: false, force: :cascade do |t|
@@ -161,7 +148,7 @@ ActiveRecord::Schema.define(version: 20160415075051) do
   add_index "roles_users", ["user_id"], name: "index_roles_users_on_user_id"
 
   create_table "subjects", force: :cascade do |t|
-    t.string  "name",       limit: 255
+    t.string  "name"
     t.integer "word_count"
   end
 
@@ -179,19 +166,18 @@ ActiveRecord::Schema.define(version: 20160415075051) do
     t.integer  "losses"
     t.float    "win_percentage"
     t.decimal  "revenue",                    precision: 18, scale: 2
-    t.string   "color",          limit: 255
+    t.string   "color"
   end
 
   create_table "unscoped_pages", force: :cascade do |t|
-    t.string   "title",      limit: 255
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "type",                   limit: 255
     t.integer  "team_id"
-    t.string   "name",                   limit: 100,                 null: false
+    t.string   "name",                   limit: 100
     t.string   "position",               limit: 50
     t.integer  "number",                             default: 0,     null: false
     t.boolean  "retired",                            default: false
@@ -201,35 +187,28 @@ ActiveRecord::Schema.define(version: 20160415075051) do
     t.datetime "deleted_at"
     t.text     "notes"
     t.string   "account",                limit: 36
-    t.string   "parent_account",         limit: 36
+    t.string   "nickname",               limit: 36
     t.string   "cellphone",              limit: 16
-    t.string   "card_num",               limit: 36
-    t.string   "bank_name",              limit: 36
-    t.string   "bank_num",               limit: 36
-    t.string   "sms_num",                limit: 16
-    t.string   "address",                limit: 100
-    t.string   "company_address",        limit: 100
-    t.integer  "parent_id"
-    t.string   "email",                  limit: 255, default: "",    null: false
-    t.string   "encrypted_password",     limit: 255, default: "",    null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                              default: "",    null: false
+    t.string   "encrypted_password",                 default: "",    null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",                      default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.string   "password_salt",          limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "password_salt"
     t.integer  "failed_attempts",                    default: 0
-    t.string   "unlock_token",           limit: 255
+    t.string   "unlock_token"
     t.datetime "locked_at"
-    t.string   "authentication_token",   limit: 255
-    t.string   "invitation_token",       limit: 255
+    t.string   "authentication_token"
+    t.string   "invitation_token"
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
-    t.string   "avatar_file_name",       limit: 255
-    t.string   "avatar_content_type",    limit: 255
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end

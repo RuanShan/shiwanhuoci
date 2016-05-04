@@ -1,8 +1,16 @@
+/* flash object */
+#asound_top{ display: none;}
+
 .login{
   padding: 6px 0;
   background-color: #3D4053;
 }
-.login a {
+.devise_menu{ list-style: none; margin: 0; padding: 0; }
+
+.devise_menu li{
+  float: left;
+}
+.devise_menu a {
   color: white;
   padding: 6px 12px;
   text-decoration: none;
@@ -21,6 +29,22 @@
   background-color: #59BCE6;
 }
 .slogan img{ width: 100%; }
+
+.col4{
+  margin-right: 20px;
+  width: 300px;
+  float: left;
+}
+.col4.last{
+  margin-right: 0px;
+}
+.col3{
+  margin-right: 20px;
+  width: 220px;
+  float: left;
+}
+
+
 .subject{
   background-color: #f7f7f7;
   text-align: center;

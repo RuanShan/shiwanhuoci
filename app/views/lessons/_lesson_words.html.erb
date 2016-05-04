@@ -3,7 +3,7 @@
   <div class="rgt"><%= link_to ">", "#", class: 'operate-btn lb-nav lb-next op-next'  %> </div>
   <div class="words">
     <% @lesson.classifications.each{ |lesson_word| word = lesson_word.word  %>
-      <%= div_for(word, class: "word #{ lesson_word.first? ? 'active' : 'inactive'}") do %>
+      <%= div_for(word, class: "word #{ lesson_word.first? ? 'active' : 'inactive'}", data: { lesson_id: lesson_word.lesson_id, word_id: lesson_word.word_id}) do %>
        <p class="s0"> <span class="position"><%= lesson_word.position %></span> </p>
        <p class="center s1"><span class="spelling"> <%= word.spelling %> </span>
          <span class="meanings"> <%= word.meanings %> </span>

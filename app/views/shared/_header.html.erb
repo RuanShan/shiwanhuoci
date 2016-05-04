@@ -1,22 +1,21 @@
-<div class="login">
-  <div class="container">
-    <div class="right">
-      <a> 登陆</a>
-      <a> 注册</a>
+<div class="login clearfix">
+  <div class="content">
+    <div class="pull-right">
+        <%= render 'shared/devise_menu' %>
     </div>
   </div>
 </div>
 <div class="header clearfix">
-  <div class="container">
-    <div class=" span-24 ">
+  <div class="content">
+    <div class="  ">
       <div class="clearfix">
-        <div class="left"> <%= image_tag 'logo.png' %>  </div>
+        <div class="pull-left"> <%= image_tag 'logo.png' %>  </div>
         <%= render partial: 'shared/mainnav' %>
       </div>
     </div>
   </div>
 </div>
-<div class="container">
+<div class="content">
   <div class="slogan">
     <%= image_tag 'banner.jpg' %>
   </div>

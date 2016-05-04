@@ -60,4 +60,10 @@ RailsAdmin.config do |config|
     field :word_count
   end
 
+
+  config.model 'User' do
+    field :email
+    field :password
+    field :password_confirmation
+  end
 end

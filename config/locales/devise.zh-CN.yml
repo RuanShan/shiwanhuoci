@@ -1,9 +1,18 @@
 zh-CN:
   devise:
+    labels:
+      remember_me: '记住我'
+      forgot_your_password: '忘记密码?'
+      didnt_receive_confirmation_instructions: '没有收到确认帐号的电子邮件?'
+      didnt_receive_unlock_instructions: '没有收到帐号解锁的电子邮件?'
     actions:
       sign_in: "登录"
+      sign_up: "注册"
+      sign_out: "退出"
+      edit: "我的账户"
     titles:
       sign_in: "登录"
+      sign_up: "注册"
     confirmations:
       confirmed: "恭喜您，注册成功，现在可以登录了"
       send_instructions: "几分钟后，您将收到确认帐号的电子邮件."

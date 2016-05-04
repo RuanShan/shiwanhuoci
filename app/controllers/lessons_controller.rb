@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: [:show, :edit, :update, :destroy, :start]
 
+  before_action :set_lesson
+  skip_before_action  :set_lesson, only: [:index, :get_more]
   # GET /lessons
   # GET /lessons.json
   def index
@@ -20,6 +21,11 @@ class LessonsController < ApplicationController
 
   def start
     render partial: 'lesson_words'
+  end
+
+  # authenticate required
+  def get_more
+
   end
 
   #def start
