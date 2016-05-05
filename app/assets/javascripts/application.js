@@ -17,31 +17,30 @@ $(function(){
       var $word_active =  $("#facebox .word.active");
       var lesson_id = $word_active.data('lesson-id');
       var word_id =  $word_active.data('word-id');
-      var goto_next = true;
       //
-      if( $word_active.prevAll().size() == 1 ){
-        $.ajax( {url:'/lessons/get_more', data: {lesson_id: lesson_id, word_id: word_id} } )
-      }else{
-        if($word_active.prev().is('*')){
-          $word_active.hide().toggleClass("active").prev().show().toggleClass("active");
-        }
+      if($word_active.prev().is('*')){
+        $word_active.hide().toggleClass("active").prev().show().toggleClass("active");
+        touch_word();
       }
 
     }else if ($this.hasClass("op-next")) {
       var $word_active =  $("#facebox .word.active");
       var lesson_id = $word_active.data('lesson-id');
       var word_id =  $word_active.data('word-id');
-      var goto_next = true;
-      if( $word_active.prevAll().size() == 1 ){
-        $.ajax( {url:'/lessons/get_more', data: {lesson_id: lesson_id, word_id: word_id} } )
-      }else{
-        if($word_active.next().is('*')){
-          $word_active.hide().toggleClass("active").next().show().toggleClass("active");
-        }
+      if($word_active.next().is('*')){
+        $word_active.hide().toggleClass("active").next().show().toggleClass("active");
+        touch_word();
       }
     }
 
   })
 
+  function touch_word(){
+    var $word_active =  $("#facebox .word.active");
+    var lesson_id = $word_active.data('lesson-id');
+    var word_id =  $word_active.data('word-id');
+    $.ajax( {url:'/lessons/'+lesson_id+'/touch_word', data: { word_id: word_id} } )
+
+  }
 
 });

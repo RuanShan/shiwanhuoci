@@ -23,11 +23,20 @@ class LessonsController < ApplicationController
     render partial: 'lesson_words'
   end
 
-  # authenticate required
+  # authenticate required, xhr only
   def get_more
+    if user_signed_in?
 
+    else
+      render 'sign_in'
+    end
   end
 
+  # * params
+  #   * word_id
+  def touch_word
+    
+  end
   #def start
   #
   #end
