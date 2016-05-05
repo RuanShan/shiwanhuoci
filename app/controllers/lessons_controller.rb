@@ -35,7 +35,9 @@ class LessonsController < ApplicationController
   # * params
   #   * word_id
   def touch_word
-    
+    @word = Word.find params[:word_id]
+    session["lesson_#{@lesson.id}"] = @word.id
+    render plain: "success"
   end
   #def start
   #
